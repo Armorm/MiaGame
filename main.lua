@@ -6,11 +6,16 @@ local menu = require("menuMain")
 local firstact = require("firstAct")
 
 function love.load()
+ function love.keypressed(key, scancode, isrepeat)
+    Gamestate.keypressed(key, scancode, isrepeat)
+end
+
  love.graphics.setDefaultFilter("nearest", "nearest") 
  love.window.setMode(800, 480)
  Canvas = love.graphics.newCanvas(400, 240)
+ 
  Gamestate.switch(menu)
-
+ 
 end
 
 function love.update(dt)
